@@ -1,22 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "pilha_EE.h"
+#include "fila_EE.h"
 
 int main()
 {
-    pilha P;
-    InicPilha(&P);
+    fila P;
+    InicFila(&P);
 
-    Empilhar(10, &P);
-    Empilhar(20, &P);
-    Empilhar(30, &P);
+    Entrar(10, &P);
+    Entrar(20, &P);
+    Entrar(30, &P);
 
-    printf("%d popped from stack\n", Topo(P));
-    Desempilhar(&P);
-    printf("%d popped from stack\n", Topo(P));
-    Desempilhar(&P);
-    printf("%d popped from stack\n", Topo(P));
-    Desempilhar(&P);
-    printf("%d popped from stack\n", Topo(P));
+    printf("%d popped from stack\n", Frente(P));
+    Deletar(&P);
+    printf("%d popped from stack\n", Frente(P));
+    Deletar(&P);
+    printf("%d popped from stack\n", Frente(P));
+    Deletar(&P);
+    printf("%d popped from stack\n", Frente(P));
     return 0;
 }
