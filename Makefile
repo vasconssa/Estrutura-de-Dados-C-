@@ -1,11 +1,11 @@
 CFLAGS=-Wall -g
 
 
-test: main.o pilha_EE.o
-	cc -o test main.o pilha_EE.o
-main.o: main.c pilha_EE.o
+test: main.o pilha_EC.o
+	cc -o test main.o pilha_EC.o
+main.o: main.c pilha_EC.o
 
-pilha_EE.o: pilha_EE.c pilha_EE.h
+pilha_EC.o: pilha_EC.c pilha_EC.h
 
 clean: 
-	rm -f main.o pilha_EE.o test
+	rm -f main.o pilha_EC.o test
