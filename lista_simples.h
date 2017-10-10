@@ -5,13 +5,16 @@
 #ifndef _lista_simples_h
 #define _lista_simples_h
 
+/*A implementacao utiliza um noh cabeca apontando
+ * para o primeiro elemento da lista */
+
 // Define um ponteiro void para dados genericos
 typedef void* gpointer;
 // Definicao estrutura lista
 typedef struct noh noh;
 typedef noh *lista;
 struct noh {
-    dados elem;
+    gpointer elem;
     noh *prox;
 };
 
@@ -24,17 +27,21 @@ typedef noh *posicao;
 // Declaraçao Operadores
 
 bool inic_lista(lista *L);
-void inserir_no_fim(lista *L, gpointer valor);
-void inserir_no_comeco(lista *L, gpointer valor);
-void inserir(lista *L, posicao p, gpointer valor);
-void inserir_ordenado(lista *L, gpointer valor, cmp_func func);
+bool inserir_no_fim(lista *L, gpointer valor);
+bool inserir_no_comeco(lista *L, gpointer valor);
+bool inserir(lista *L, posicao p, gpointer valor);
+bool inserir_ordenado(lista *L, gpointer valor, cmp_func func);
 gpointer deletar(lista *L, posicao p);
 posicao local(lista L, gpointer valor);
-void esvaziar (lista *L);
+bool esvaziar (lista *L);
 posicao primeira(lista L);
 posicao fim(lista L);
 posicao proxima(lista L);
 gpointer elemento(Lista L, posicao);
+
+// Funcoes auxiliares
+
+bool alocar_noh(noh **no, gpointer dados); 
 
 
 
